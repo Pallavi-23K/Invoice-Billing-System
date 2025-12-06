@@ -1,0 +1,317 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-controls span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.header-controls button {
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.header-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: white;
+  transform: translateY(-1px);
+}
+
+.tab-bar {
+  display: flex;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0;
+  border-bottom: 3px solid #5a67d8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tab-bar button {
+  padding: 16px 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+  color: white;
+  position: relative;
+}
+
+.tab-bar button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tab-bar button.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  border-bottom: 4px solid white;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 30px;
+  display: flex;
+  background: linear-gradient(to bottom, #f5f5f5, #e8e8e8);
+  overflow-y: auto;
+}
+
+.manage-users-container,
+.billing-container {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 0 0 220px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.left-panel button {
+  padding: 12px 16px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  border-left: 4px solid transparent;
+}
+
+.left-panel button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-left-color: #4ade80;
+  transform: translateX(4px);
+}
+
+.left-panel button.active {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-left-color: #fbbf24;
+}
+
+.right-panel {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #fafafa;
+  overflow-y: auto;
+  max-height: calc(100vh - 180px);
+}
+
+.add-user-form,
+.create-billing-form,
+.edit-bill-form,
+.view-users-container,
+.view-bills-container,
+.download-invoice-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 30px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.add-user-form div,
+.create-billing-form div,
+.edit-bill-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-user-form label,
+.create-billing-form label,
+.edit-bill-form label {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.add-user-form input[type="text"],
+.add-user-form input[type="password"],
+.add-user-form input[type="email"],
+.create-billing-form input[type="text"],
+.create-billing-form input[type="email"],
+.create-billing-form input[type="date"],
+.create-billing-form input[type="number"],
+.create-billing-form textarea,
+.edit-bill-form input[type="text"],
+.edit-bill-form input[type="email"],
+.edit-bill-form input[type="date"],
+.edit-bill-form input[type="number"],
+.edit-bill-form textarea {
+  padding: 12px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.add-user-form input[type="text"]:focus,
+.add-user-form input[type="password"]:focus,
+.add-user-form input[type="email"]:focus,
+.create-billing-form input[type="text"]:focus,
+.create-billing-form input[type="email"]:focus,
+.create-billing-form input[type="date"]:focus,
+.create-billing-form input[type="number"]:focus,
+.create-billing-form textarea:focus,
+.edit-bill-form input[type="text"]:focus,
+.edit-bill-form input[type="email"]:focus,
+.edit-bill-form input[type="date"]:focus,
+.edit-bill-form input[type="number"]:focus,
+.edit-bill-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background-color: #f8f9ff;
+}
+
+.create-billing-form textarea,
+.edit-bill-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.add-user-form button,
+.create-billing-form button,
+.edit-bill-form button,
+.view-users-container button,
+.view-bills-container button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.add-user-form button,
+.create-billing-form button,
+.edit-bill-form button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.add-user-form button:hover,
+.create-billing-form button:hover,
+.edit-bill-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+}
+
+.edit-bill-form button[type="button"] {
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+}
+
+.edit-bill-form button[type="button"]:hover {
+  box-shadow: 0 8px 16px rgba(107, 114, 128, 0.4);
+}
+
+.add-user-form p,
+.create-billing-form p,
+.edit-bill-form p {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #10b981;
+  padding: 12px;
+  background-color: #ecfdf5;
+  border-radius: 6px;
+  border-left: 4px solid #10b981;
+}
+
+.view-users-container,
+.view-bills-container {
+  max-width: 1000px;
+}
+
+.view-users-container h3,
+.view-bills-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px;
+}
+
+.view-users-container table,
+.view-bills-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.view-users-container th,
+.view-bills-container th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.view-users-container td,
+.view-bills-container td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 14px;
+  text-align: left;
+}
+
+.view-users-container tbody tr:hover,
+.view-bills-container tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+.view-users-container tbody tr:nth-child(even),
+.view-bills-container tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.view-users-container p,
+.view-bills-container p {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: #6b7280;
+}
